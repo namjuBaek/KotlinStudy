@@ -4,4 +4,4 @@
 <br></br>
 ### 프로젝트
 ---
-1. aoppart2chapter01 : BMI 계산 
+(1) aoppart2chapter01 : BMI 계산 
