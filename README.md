@@ -3,7 +3,7 @@
 
 <br></br>
 ## 프로젝트
-(1) aoppart2chapter01 : BMI 계산 프로그램
+(1) aoppart2chapter01 : BMI 계산 프로그램<br></br>
 (2) LottoGenerator : 로또 번호 생성 프로그램
  - ConstraintLayout 사용
  - NumberPicker 속성과 사용법
