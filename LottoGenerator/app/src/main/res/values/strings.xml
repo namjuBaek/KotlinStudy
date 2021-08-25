@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LottoGenerator</string>
+
+    <string name="button_add">번호 추가하기</string>
+    <string name="button_clear">초기화</string>
+    <string name="button_run">번호 생성하기</string>
+</resources>
