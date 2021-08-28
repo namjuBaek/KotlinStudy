@@ -7,7 +7,9 @@
 (2) LottoGenerator : 로또 번호 생성 프로그램
  - ConstraintLayout 사용
  - NumberPicker 속성과 사용법
- - apply, when, random, Collection 등 코틀린 문법 공부<br></br>
+ - apply, when, random, Collection 등 코틀린 문법 공부
+
+
 (3) SecretDiary : 비밀 다이어리
  - ConstraintLayout 사용
  - Handler 사용
