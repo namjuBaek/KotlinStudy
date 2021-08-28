@@ -12,8 +12,8 @@
 <br></br>
 
 (3) SecretDiary : 비밀 다이어리
- - ConstraintLayout 사용
- - Handler 사용
+ - ConstraintLayout 
+ - Handler 
  - SharedPreference 속성과 사용법
- - AlertDialog 사용
+ - AlertDialog 
  - android-ktx 
