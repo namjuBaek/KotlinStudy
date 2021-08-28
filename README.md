@@ -8,8 +8,3 @@
  - ConstraintLayout 사용
  - NumberPicker 속성과 사용법
  - apply, when, random, Collection 등 코틀린 문법 공부<br></br>
-(3) SecretDiary : 비밀 다이어리
- - ConstraintLayout 사용
- - Handler 사용
- - SharedPreference 속성과 사용법
- - AlertDialog 사용
