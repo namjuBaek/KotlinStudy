@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C3DFA1"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_title"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/nexon_lv2_bold_font"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/passwordLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F1F1F1"
+        android:padding="20dp"
+        app:layout_constraintVertical_bias="0.45"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/openButton"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="#1B3002"
+            app:layout_constraintBottom_toBottomOf="@+id/firstPassword"
+            app:layout_constraintEnd_toStartOf="@id/firstPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/firstPassword" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/changePasswordButton"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/openButton"
+            app:layout_constraintStart_toStartOf="@+id/openButton"
+            app:layout_constraintTop_toBottomOf="@+id/openButton" />
+
+        <NumberPicker
+            android:id="@+id/firstPassword"
+            android:layout_width="30dp"
+            android:layout_height="120dp"
+            android:background="#DCD8D8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/secondPassword"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/openButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <NumberPicker
+            android:id="@+id/secondPassword"
+            android:layout_width="30dp"
+            android:layout_height="120dp"
+            android:background="#DCD8D8"
+            app:layout_constraintBottom_toBottomOf="@+id/firstPassword"
+            app:layout_constraintEnd_toStartOf="@+id/thirdPassword"
+            app:layout_constraintStart_toEndOf="@+id/firstPassword"
+            app:layout_constraintTop_toTopOf="@+id/firstPassword" />
+
+        <NumberPicker
+            android:id="@+id/thirdPassword"
+            android:layout_width="30dp"
+            android:layout_height="120dp"
+            android:background="#DCD8D8"
+            app:layout_constraintBottom_toBottomOf="@id/firstPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/secondPassword"
+            app:layout_constraintTop_toTopOf="@id/firstPassword" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
