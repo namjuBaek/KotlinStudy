@@ -17,3 +17,14 @@
  - SharedPreference 속성과 사용법
  - AlertDialog 
  - android-ktx 
+<br></br>
+
+(4) Calculator : 계산기 프로그램
+ - TableLayout
+ - ConstraintLayout
+ - LayoutInflator
+ - Thread 생성 후 사용
+ - runOnUiThread
+ - Room : 로컬 DB에 데이터 저장을 돕는 라이브러리
+ - 확장 함수 사용
+ - data class 사용
