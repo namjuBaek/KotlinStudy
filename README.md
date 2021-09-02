@@ -30,6 +30,6 @@
  - data class 사용
 <br></br>
 
-(5) DigitalFrame : 전자액자
+(5) DigitalFrame : 전자액자 (로컬 사진 로드)
  - permission
  - Content Provider (Storage Access Framework)
