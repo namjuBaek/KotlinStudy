@@ -34,3 +34,6 @@
  - permission
  - Content Provider (Storage Access Framework)
  - View Animation
+ - startActivityForResult(decreased) 대신 registerForActivityResult 사용
+ - Activity  생명주기
+
