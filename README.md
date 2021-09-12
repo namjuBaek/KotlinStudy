@@ -28,3 +28,9 @@
  - Room : 로컬 DB에 데이터 저장을 돕는 라이브러리
  - 확장 함수 사용
  - data class 사용
+<br></br>
+
+(5) DigitalFrame : 전자액자 (로컬 사진 로드)
+ - permission
+ - Content Provider (Storage Access Framework)
+ - View Animation
