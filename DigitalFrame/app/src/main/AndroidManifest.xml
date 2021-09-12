@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PhotoFrameActivity"></activity>
+        <activity android:name=".PhotoFrameActivity"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

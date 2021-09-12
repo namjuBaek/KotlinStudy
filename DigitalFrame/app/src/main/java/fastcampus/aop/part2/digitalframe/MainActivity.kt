@@ -114,6 +114,7 @@ class MainActivity : AppCompatActivity() {
      */
 
     /**
+     *
      * startActivityForResult 2020.05부터 decreased 됨. registerForActivityResult 사용법 숙지하기기
      */
     private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
