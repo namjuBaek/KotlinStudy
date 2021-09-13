@@ -25,6 +25,8 @@
  - android-ktx 
 
 
+
+
 (4) Calculator : 계산기 프로그램
  - TableLayout
  - ConstraintLayout
@@ -36,6 +38,8 @@
  - data class 사용
 
 
+
+
 (5) DigitalFrame : 전자액자 (로컬 사진 로드)
 
  - Android permission 받기
@@ -44,3 +48,11 @@
  - startActivityForResult(decreased) 대신 registerForActivityResult 사용
  - Activity  생명주기
 
+
+
+(6) PomodoroTimer : 뽀모도로 타이머
+
+- ConstraintLayout - Chain Style 사용
+- SeekBar
+- CountDownTimer
+- SoundPool - 오디오 파일을 메모리에 로드, 재생할 수 있게 돕는 클래스
