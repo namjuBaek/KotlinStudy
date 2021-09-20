@@ -56,3 +56,12 @@
 - SeekBar
 - CountDownTimer
 - SoundPool - 오디오 파일을 메모리에 로드, 재생할 수 있게 돕는 클래스
+
+
+
+(7) audioRecoder : 녹음기
+
+- Request runtime permission
+- CustomView
+- MediaRecorder
+
