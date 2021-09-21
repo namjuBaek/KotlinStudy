@@ -1,15 +1,26 @@
  package fastcampus.aop.part2.audiorecorder
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import android.media.MediaRecorder
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 
  class MainActivity : AppCompatActivity() {
+
+     private val soundVisualizerView: SoundVisualizerView by lazy {
+         findViewById(R.id.soundVisualizerView)
+     }
+     private val recordTimeTextView: CountUpView by lazy {
+         findViewById(R.id.recordTimeTextView)
+     }
 
      private val resetButton: Button by lazy {
          findViewById(R.id.resetButton)
@@ -18,10 +29,7 @@ import android.widget.Button
         findViewById(R.id.recordButton)
      }
 
-     private val requiredPermissions = arrayOf(
-         Manifest.permission.RECORD_AUDIO,
-         Manifest.permission.READ_EXTERNAL_STORAGE
-     )
+     private val requiredPermissions = arrayOf(Manifest.permission.RECORD_AUDIO)
      private val recordingFilePath: String by lazy {
         "${externalCacheDir?.absolutePath}/recording.3gp"
      }
@@ -55,7 +63,11 @@ import android.widget.Button
          val audioRecordPermissionGranted = requestCode == REQUEST_RECORD_AUDIO_PERMISSION && grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED
 
          if (!audioRecordPermissionGranted) {
-             finish()
+             if (!shouldShowRequestPermissionRationale(permissions.first())) {
+                 showPermissionExplanationDialog()
+             } else {
+                 finish()
+             }
          }
      }
 
@@ -68,8 +80,14 @@ import android.widget.Button
      }
 
      private fun bindViews() {
+         soundVisualizerView.onRequestCurrentAmplitude = {
+             recorder?.maxAmplitude ?: 0
+         }
+
          resetButton.setOnClickListener {
              stopPlaying()
+             soundVisualizerView.clearVisualization()
+             recordTimeTextView.clearCountTime()
              state = State.BEFORE_RECORDING
          }
 
@@ -105,6 +123,8 @@ import android.widget.Button
                  prepare()
              }
          recorder?.start()
+         soundVisualizerView.startVisualizing(false)
+         recordTimeTextView.startCountUp()
          state = State.ON_RECORDING
      }
 
@@ -114,6 +134,8 @@ import android.widget.Button
              release()
          }
          recorder = null
+         soundVisualizerView.stopVisualizing()
+         recordTimeTextView.stopCountUp()
          state = State.AFTER_RECORDING
      }
 
@@ -122,14 +144,37 @@ import android.widget.Button
              setDataSource(recordingFilePath)
              prepare()
          }
+         player?.setOnCompletionListener {
+             stopPlaying()
+             state = State.AFTER_RECORDING
+         }
          player?.start()
+         soundVisualizerView.startVisualizing(true)
+         recordTimeTextView.startCountUp()
          state = State.ON_PLAYING
      }
 
      private fun stopPlaying() {
          player?.release()
          player = null
+         soundVisualizerView.stopVisualizing()
+         recordTimeTextView.stopCountUp()
          state = State.AFTER_RECORDING
+     }
+
+     private fun showPermissionExplanationDialog() {
+         AlertDialog.Builder(this)
+             .setMessage("녹음 권한을 켜주셔야지 앱을 정상적으로 사용할 수 있습니다. 앱 설정 화면으로 진입하셔서 권한을 켜주세요.")
+             .setPositiveButton("권한 변경하러 가기") { _, _ -> navigateToAppSetting() }
+             .setNegativeButton("앱 종료하기") { _, _ -> finish() }
+             .show()
+     }
+
+     private fun navigateToAppSetting() {
+         val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+         val uri: Uri = Uri.fromParts("package", packageName, null)
+         intent.data = uri
+         startActivity(intent)
      }
 
      companion object {

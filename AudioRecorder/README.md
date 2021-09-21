@@ -1,4 +1,5 @@
 
+
 # AudioRecorder / 오디오 녹음기
 1. 뷰 구성하기
 2. 권한 요청하기
@@ -10,6 +11,7 @@
 ### CustomView
 - #### 안드로이드 공식 문서
 - - #### Creating a custom view class - https://developer.android.com/training/custom-views/create-view
+- - #### Implementing custom drawing - https://developer.android.com/training/custom-views/custom-drawing
 <br>
 
 ### RECORDE_AUDIO Permission
