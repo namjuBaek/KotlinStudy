@@ -8,7 +8,7 @@
 1) 알림 메시지
 2) 데이터 메시지
 
-
+<br>
 
 #### Android 메시지 처리
 
@@ -23,7 +23,7 @@
 
 - 포그라운드, 백그라운드 상태 모두 onMessageReceived 호출
 
-
+<br>
 
 #### 등록 토큰 액세스
 
@@ -35,13 +35,15 @@
 
 > 라이브 서비스의 경우, 토큰이 갱신될 때마다 서버에 해당 토큰을 갱신하는 작업을 해줘야 함. (onNewToken() 메서드 활용)
 
-
+<br>
 
 **[Firebase 공식 문서] - 테스트 메시지 전송**
 
 https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages/send
 
+<br>
 
+#### 알림 채널
 
 **[Android 공식 문서] - 알림 채널 만들기 및 관리**
 
@@ -53,4 +55,26 @@ https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages/send
 > **설정 > 개발자 옵션 > 알림 채널 경고 표시**
 
 https://developer.android.com/training/notify-user/channels?hl=ko
+
+<br>
+
+##### 중요도 수준 설정
+
+- 긴급 : 알림음이 울리며 헤드업 알림으로 표시
+- 높음 : 알림음이 울림
+- 중간 : 알림음이 없음
+- 낮음 : 알림음이 없고 상태 표시줄에 표시되지 않음
+
+<br>
+
+#### 알림 타입
+
+>  **기본 알림 / 확장형 알림 / 커스텀 알림**
+
+**확장형 알림 만들기**
+
+- 텍스트 표시 - NotificationCompat.BigTextStyle
+- 이미지 추가 - NotificationCompat.BigPictureStyle
+
+https://developer.android.com/training/notify-user/expanded?hl=ko
 
