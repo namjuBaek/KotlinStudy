@@ -21,8 +21,6 @@
 - vertical orientation support - 세로 스크롤 지원
 - rtl 지원
 
-<br>
-
 **transformPage**
 
 - 페이지가 스크롤될 때 호출
