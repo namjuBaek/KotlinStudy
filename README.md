@@ -82,3 +82,12 @@
 - FireBase Cloud Messaging
 - Notification
 
+
+
+(10) TodayQuote : 오늘의 명언
+
+- Remote Config 활용
+- ViewPager2
+
+
+

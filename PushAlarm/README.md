@@ -78,3 +78,10 @@ https://developer.android.com/training/notify-user/channels?hl=ko
 
 https://developer.android.com/training/notify-user/expanded?hl=ko
 
+**맞춤 알림 레이아웃 만들기**
+
+- NotificationCompat.DecoratedCustomViewStyle 적용
+- RemoteViews의 인스턴스로 확장
+
+https://developer.android.com/training/notify-user/custom-notification?hl=ko> 
+
